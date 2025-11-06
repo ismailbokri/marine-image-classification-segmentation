@@ -1,0 +1,57 @@
+.ocean-bg {
+    background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    min-height: 100vh;
+}
+
+.ocean-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.navbar {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header h2 {
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #1a73e8;
+    border: none;
+    padding: 12px 25px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #1557b0;
+    transform: translateY(-2px);
+}
+/* Ajouter dans style.css */
+.card-img-overlay {
+    transition: transform 0.3s ease;
+}
+
+.card-img-overlay:hover {
+    transform: scale(1.02);
+}
+
+.segmentation-overlay {
+    border: 3px solid #1a73e8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.result-label {
+    background: rgba(26, 115, 232, 0.8);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}

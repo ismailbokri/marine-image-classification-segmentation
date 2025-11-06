@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marine AI 🌊</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .ocean-bg {
+            background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+            min-height: 100vh;
+        }
+        .marine-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+        .result-box {
+            border: 3px solid #1a73e8;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .marine-text {
+            color: #1a237e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="ocean-bg">
+    <div class="container py-5">
+        <div class="marine-card p-4 mb-4">
+            <h1 class="text-center marine-text mb-4">🌊 Détection de Déchets Marins 🐠</h1>
+            
+            <form method="POST" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" name="file" required>
+                    <button class="btn btn-primary" type="submit">Analyser 🐬</button>
+                </div>
+            </form>
+
+            {% if class_name %}
+            <div class="mt-4">
+                <h3 class="marine-text">📋 Résultats de l'analyse :</h3>
+                <div class="alert alert-primary">
+                    <strong>Classification :</strong> {{ class_name }}
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="result-box">
+                            <h5 class="p-2 bg-primary text-white m-0">Image Originale</h5>
+                            <img src="{{ url_for('static', filename='uploads/' + original_img) }}" 
+                                 class="img-fluid w-100">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="result-box">
+                            <h5 class="p-2 bg-danger text-white m-0">Segmentation</h5>
+                            <img src="{{ url_for('static', filename='uploads/' + seg_img) }}" 
+                                 class="img-fluid w-100">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-center">
+                    <a href="/" class="btn btn-outline-primary">
+                        🐋 Nouvelle Analyse
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
