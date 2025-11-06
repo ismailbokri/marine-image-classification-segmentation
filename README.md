@@ -19,9 +19,9 @@ The training dataset was organized into folders labeled by class names.
 CLASS_NAMES = [
     'bottle', 'can', 'chain', 'drink-carton', 'hook',
     'propeller', 'shampoo-bottle', 'standing-bottle', 'tire', 'valve'
-]
+]```
 📓 A training notebook is available inside the training/ directory for model reproduction and experimentation.
-```
+
 ### 🔹 2. Waste Segmentation
 The second phase focuses on precise segmentation of marine debris in sonar images.
 The original dataset lacked segmentation masks, which are required for training segmentation models.
