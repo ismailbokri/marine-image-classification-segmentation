@@ -19,7 +19,8 @@ The training dataset was organized into folders labeled by class names.
 CLASS_NAMES = [
     'bottle', 'can', 'chain', 'drink-carton', 'hook',
     'propeller', 'shampoo-bottle', 'standing-bottle', 'tire', 'valve'
-]```
+]
+```
 📓 A training notebook is available inside the training/ directory for model reproduction and experimentation.
 
 ### 🔹 2. Waste Segmentation
